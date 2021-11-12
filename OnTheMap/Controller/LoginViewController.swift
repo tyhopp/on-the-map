@@ -26,3 +26,15 @@ class LoginViewController: UIViewController {
     }
 }
 
+// MARK: Preview
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+@available(iOS 13.0, *)
+struct LoginView: PreviewProvider {
+    static var previews: some View {
+        LoginViewController().preview(storyboardId: "LoginViewController")
+    }
+}
+#endif
