@@ -16,55 +16,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="URI-Kp-GKA" userLabel="Logo Image View">
-                                <rect key="frame" x="157" y="124" width="100" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9FI-Q9-wFR">
+                                <rect key="frame" x="7" y="198.5" width="400" height="499.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWu-A1-XbJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="166.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="URI-Kp-GKA" userLabel="Logo Image View">
+                                                <rect key="frame" x="169" y="52" width="62" height="62"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="3OZ-yD-Qi0"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="9d2-sn-sBQ"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="URI-Kp-GKA" firstAttribute="centerX" secondItem="RWu-A1-XbJ" secondAttribute="centerX" id="8hP-91-lgu"/>
+                                            <constraint firstItem="URI-Kp-GKA" firstAttribute="centerY" secondItem="RWu-A1-XbJ" secondAttribute="centerY" id="ihq-Pg-SRY"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UHP-GC-BSh">
+                                        <rect key="frame" x="0.0" y="166.5" width="400" height="166.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjt-DO-GCk" userLabel="Email Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="47.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0Z-hu-I8V" userLabel="Password Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="59.5" width="400" height="47.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyx-NQ-IIb" userLabel="Log In Button">
+                                                <rect key="frame" x="0.0" y="119" width="400" height="47.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Log In">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="nyx-NQ-IIb" firstAttribute="width" secondItem="UHP-GC-BSh" secondAttribute="width" id="FCO-KD-t5W"/>
+                                            <constraint firstItem="J0Z-hu-I8V" firstAttribute="width" secondItem="UHP-GC-BSh" secondAttribute="width" id="crt-t4-9Qg"/>
+                                            <constraint firstItem="Hjt-DO-GCk" firstAttribute="width" secondItem="UHP-GC-BSh" secondAttribute="width" id="yEq-w9-IeK"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHh-qT-qNZ">
+                                        <rect key="frame" x="0.0" y="333" width="400" height="166.5"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Don't have an account?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nuj-Pc-elw" customClass="LoginSignupTextView" customModule="OnTheMap" customModuleProvider="target">
+                                                <rect key="frame" x="119" y="20" width="162" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Nuj-Pc-elw" firstAttribute="top" secondItem="cHh-qT-qNZ" secondAttribute="top" constant="20" id="t00-pu-kOG"/>
+                                            <constraint firstItem="Nuj-Pc-elw" firstAttribute="centerX" secondItem="cHh-qT-qNZ" secondAttribute="centerX" id="wKu-5z-CpL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="3OZ-yD-Qi0"/>
-                                    <constraint firstAttribute="width" constant="100" id="9d2-sn-sBQ"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="24n-XV-JGf"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="Z5R-5A-r61"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="qTw-vr-p6L"/>
                                 </constraints>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjt-DO-GCk" userLabel="Email Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
-                                <rect key="frame" x="20" y="336" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0Z-hu-I8V" userLabel="Password Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
-                                <rect key="frame" x="20" y="390" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyx-NQ-IIb" userLabel="Log In Button">
-                                <rect key="frame" x="20" y="444" width="374" height="32"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Log In">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
-                                </buttonConfiguration>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Don't have an account?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nuj-Pc-elw" customClass="LoginSignupTextView" customModule="OnTheMap" customModuleProvider="target">
-                                <rect key="frame" x="20" y="506" width="374" height="33"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Nuj-Pc-elw" firstAttribute="top" secondItem="nyx-NQ-IIb" secondAttribute="bottom" constant="30" id="1Ca-qR-W6J"/>
-                            <constraint firstItem="nyx-NQ-IIb" firstAttribute="top" secondItem="J0Z-hu-I8V" secondAttribute="bottom" constant="20" id="8Fy-I3-mH9"/>
-                            <constraint firstItem="nyx-NQ-IIb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="8mZ-aV-lXt"/>
-                            <constraint firstItem="J0Z-hu-I8V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MMQ-FE-Kyb"/>
-                            <constraint firstItem="Hjt-DO-GCk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="UAN-Tm-bRi"/>
-                            <constraint firstItem="nyx-NQ-IIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wb2-PP-WfU"/>
-                            <constraint firstItem="Nuj-Pc-elw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wu1-g5-M8M"/>
-                            <constraint firstItem="Hjt-DO-GCk" firstAttribute="top" secondItem="URI-Kp-GKA" secondAttribute="bottom" multiplier="1.5" id="adV-LW-5ex"/>
-                            <constraint firstItem="J0Z-hu-I8V" firstAttribute="top" secondItem="Hjt-DO-GCk" secondAttribute="bottom" constant="20" id="bFL-Zg-54u"/>
-                            <constraint firstItem="URI-Kp-GKA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="bq9-xR-t2L"/>
-                            <constraint firstItem="URI-Kp-GKA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eXt-ox-yOn"/>
-                            <constraint firstItem="Hjt-DO-GCk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ga3-vA-XdJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nuj-Pc-elw" secondAttribute="trailing" constant="20" id="hit-ma-wX4"/>
-                            <constraint firstItem="J0Z-hu-I8V" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="yLW-7U-7pN"/>
+                            <constraint firstItem="9FI-Q9-wFR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jj5-yo-abO"/>
+                            <constraint firstItem="9FI-Q9-wFR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hdl-J6-6D7"/>
                         </constraints>
                     </view>
                     <connections>
