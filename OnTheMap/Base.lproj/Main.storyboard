@@ -40,32 +40,38 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtC-PZ-Hmw">
-                                <rect key="frame" x="20" y="506" width="374" height="17"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Don't have an account?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nuj-Pc-elw" customClass="LoginSignupTextView" customModule="OnTheMap" customModuleProvider="target">
+                                <rect key="frame" x="20" y="506" width="374" height="33"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Nuj-Pc-elw" firstAttribute="top" secondItem="nyx-NQ-IIb" secondAttribute="bottom" constant="30" id="1Ca-qR-W6J"/>
                             <constraint firstItem="nyx-NQ-IIb" firstAttribute="top" secondItem="J0Z-hu-I8V" secondAttribute="bottom" constant="20" id="8Fy-I3-mH9"/>
                             <constraint firstItem="nyx-NQ-IIb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="8mZ-aV-lXt"/>
-                            <constraint firstItem="OtC-PZ-Hmw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="J8k-Qs-2E5"/>
                             <constraint firstItem="J0Z-hu-I8V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MMQ-FE-Kyb"/>
                             <constraint firstItem="Hjt-DO-GCk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="UAN-Tm-bRi"/>
                             <constraint firstItem="nyx-NQ-IIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wb2-PP-WfU"/>
+                            <constraint firstItem="Nuj-Pc-elw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wu1-g5-M8M"/>
                             <constraint firstItem="Hjt-DO-GCk" firstAttribute="top" secondItem="URI-Kp-GKA" secondAttribute="bottom" multiplier="1.5" id="adV-LW-5ex"/>
                             <constraint firstItem="J0Z-hu-I8V" firstAttribute="top" secondItem="Hjt-DO-GCk" secondAttribute="bottom" constant="20" id="bFL-Zg-54u"/>
-                            <constraint firstItem="OtC-PZ-Hmw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="bUV-ZN-LFh"/>
                             <constraint firstItem="URI-Kp-GKA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="bq9-xR-t2L"/>
                             <constraint firstItem="URI-Kp-GKA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eXt-ox-yOn"/>
                             <constraint firstItem="Hjt-DO-GCk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ga3-vA-XdJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nuj-Pc-elw" secondAttribute="trailing" constant="20" id="hit-ma-wX4"/>
                             <constraint firstItem="J0Z-hu-I8V" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="yLW-7U-7pN"/>
-                            <constraint firstItem="OtC-PZ-Hmw" firstAttribute="top" secondItem="nyx-NQ-IIb" secondAttribute="bottom" constant="30" id="z5z-6a-mqb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Hjt-DO-GCk" id="w5y-aK-h98"/>
+                        <outlet property="loginButton" destination="nyx-NQ-IIb" id="D3O-jY-TuC"/>
+                        <outlet property="passworldTextField" destination="J0Z-hu-I8V" id="0oO-TD-vYY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,6 +80,9 @@
     </scenes>
     <resources>
         <image name="logo-u" width="62" height="62"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

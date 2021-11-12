@@ -20,6 +20,7 @@
 		E53C5668273BCC510077B63E /* UdacityClientErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C5667273BCC510077B63E /* UdacityClientErrorResponse.swift */; };
 		E58774AC273E0360007251EC /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58774AB273E0360007251EC /* LoginTextField.swift */; };
 		E58774AE273E0BDD007251EC /* UIViewController+StoryboardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58774AD273E0BDD007251EC /* UIViewController+StoryboardPreview.swift */; };
+		E58774B6273E4EED007251EC /* LoginSignupTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58774B5273E4EED007251EC /* LoginSignupTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E53C5667273BCC510077B63E /* UdacityClientErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClientErrorResponse.swift; sourceTree = "<group>"; };
 		E58774AB273E0360007251EC /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		E58774AD273E0BDD007251EC /* UIViewController+StoryboardPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardPreview.swift"; sourceTree = "<group>"; };
+		E58774B5273E4EED007251EC /* LoginSignupTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E58774AB273E0360007251EC /* LoginTextField.swift */,
+				E58774B5273E4EED007251EC /* LoginSignupTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				E58774AE273E0BDD007251EC /* UIViewController+StoryboardPreview.swift in Sources */,
 				E53C5660273BB68C0077B63E /* StudentInformation.swift in Sources */,
 				E5109E85273B675800CB57D5 /* SceneDelegate.swift in Sources */,
+				E58774B6273E4EED007251EC /* LoginSignupTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

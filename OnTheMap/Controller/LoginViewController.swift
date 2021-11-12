@@ -8,6 +8,13 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    // MARK: Outlets
+    @IBOutlet weak var emailTextField: LoginTextField!
+    @IBOutlet weak var passworldTextField: LoginTextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
