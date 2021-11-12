@@ -24,6 +24,7 @@ class LoginSignupTextView: UITextView, UITextViewDelegate {
         
         // Style
         font = .systemFont(ofSize: 16.0)
+        textColor = .label
         textAlignment = .center
     }
 

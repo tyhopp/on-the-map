@@ -41,7 +41,7 @@ import SwiftUI
 @available(iOS 13.0, *)
 struct LoginView: PreviewProvider {
     static var previews: some View {
-        LoginViewController().preview(storyboardId: "LoginViewController")
+        LoginViewController().preview(storyboardId: "LoginViewController").previewInterfaceOrientation(.portrait)
     }
 }
 #endif
