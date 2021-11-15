@@ -42,7 +42,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjt-DO-GCk" userLabel="Email Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="47.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" textContentType="username"/>
                                                 <connections>
                                                     <action selector="emailTextChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="d5J-0M-JJ8"/>
                                                 </connections>
@@ -50,16 +50,17 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0Z-hu-I8V" userLabel="Password Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="59.5" width="400" height="47.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                                 <connections>
                                                     <action selector="passwordTextChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Vcs-pB-e1W"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyx-NQ-IIb" userLabel="Log In Button">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyx-NQ-IIb" userLabel="Log In Button">
                                                 <rect key="frame" x="0.0" y="119" width="400" height="47.5"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Log In">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T4G-6I-Xdz"/>

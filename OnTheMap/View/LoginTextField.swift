@@ -17,7 +17,6 @@ class LoginTextField: UITextField, UITextFieldDelegate {
         defaultTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.label
         ]
-        autocorrectionType = .no
         delegate = self
     }
     

@@ -19,8 +19,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        passwordTextField.isSecureTextEntry = true
-        loginButton.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +54,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) -> Void {
+        toggleLoadingIndicator(loading: true)
+        
         UdacityClient.login(username: emailTextField.text!, password: passwordTextField.text!, completion: { success, error in
+            self.toggleLoadingIndicator(loading: false)
+            
             if let error = error {
                 self.showLoginErrorAlert(error: error)
                 return
@@ -76,7 +78,7 @@ class LoginViewController: UIViewController {
         view.frame.origin.y += getHalfKeyboardHeight(notification)
     }
     
-    func getHalfKeyboardHeight(_ notification: Notification) -> CGFloat {
+    private func getHalfKeyboardHeight(_ notification: Notification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height / 2
@@ -93,6 +95,27 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         show(alert, sender: nil)
+    }
+    
+    private func toggleLoadingIndicator(loading: Bool) {
+        loginButton.isEnabled = !loading
+        loginButton.setTitle(loading ? "" : "Log In", for: .normal)
+        loginButton.setImage(loading ? UIImage(named: "loading") : UIImage(), for: .normal)
+        rotate(view: loginButton.imageView, start: loading)
+    }
+    
+    private func rotate(view: UIView?, start: Bool) {
+        guard start else {
+            view?.layer.removeAnimation(forKey: "rotationAnimation")
+            return
+        }
+        
+        let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.toValue = NSNumber(value: Double.pi * 2)
+        rotation.duration = 1
+        rotation.isCumulative = true
+        rotation.repeatCount = Float.greatestFiniteMagnitude
+        view?.layer.add(rotation, forKey: "rotationAnimation")
     }
 }
 
