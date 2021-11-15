@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9FI-Q9-wFR">
-                                <rect key="frame" x="7" y="198" width="400" height="500"/>
+                                <rect key="frame" x="7" y="223" width="400" height="450"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWu-A1-XbJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="166.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="URI-Kp-GKA" userLabel="Logo Image View">
-                                                <rect key="frame" x="169" y="52.5" width="62" height="62"/>
+                                                <rect key="frame" x="169" y="44" width="62" height="62"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="3OZ-yD-Qi0"/>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="9d2-sn-sBQ"/>
@@ -37,10 +37,10 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UHP-GC-BSh">
-                                        <rect key="frame" x="0.0" y="166.5" width="400" height="167"/>
+                                        <rect key="frame" x="0.0" y="150" width="400" height="150"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjt-DO-GCk" userLabel="Email Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="400" height="47.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" textContentType="username"/>
                                                 <connections>
@@ -48,7 +48,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0Z-hu-I8V" userLabel="Password Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="59.5" width="400" height="48"/>
+                                                <rect key="frame" x="0.0" y="54" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                                 <connections>
@@ -56,7 +56,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyx-NQ-IIb" userLabel="Log In Button">
-                                                <rect key="frame" x="0.0" y="119.5" width="400" height="47.5"/>
+                                                <rect key="frame" x="0.0" y="108" width="400" height="42"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Log In" buttonSize="large">
@@ -74,7 +74,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHh-qT-qNZ">
-                                        <rect key="frame" x="0.0" y="333.5" width="400" height="166.5"/>
+                                        <rect key="frame" x="0.0" y="300" width="400" height="150"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Don't have an account?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nuj-Pc-elw" customClass="LoginSignupTextView" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="119" y="20" width="162" height="33"/>
@@ -92,7 +92,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="24n-XV-JGf"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="450" id="24n-XV-JGf"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="Z5R-5A-r61"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="qTw-vr-p6L"/>
                                 </constraints>
