@@ -7,9 +7,9 @@
 
 import UIKit
 
-// TODO: Implement
-
 class LoginTextField: UITextField, UITextFieldDelegate {
+    
+    // MARK: Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +20,8 @@ class LoginTextField: UITextField, UITextFieldDelegate {
         autocorrectionType = .no
         delegate = self
     }
+    
+    // MARK: Delegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.resignFirstResponder()
