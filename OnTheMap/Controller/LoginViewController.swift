@@ -37,7 +37,10 @@ class LoginViewController: UIViewController {
         UdacityClient.login(username: emailTextField.text!, password: passwordTextField.text!, completion: { success, error in
             if let error = error {
                 self.showLoginErrorAlert(error: error)
+                return
             }
+            
+            // TODO - Segue to tab navigator map view
         })
     }
     

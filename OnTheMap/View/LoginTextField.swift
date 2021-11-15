@@ -9,7 +9,7 @@ import UIKit
 
 // TODO: Implement
 
-class LoginTextField: UITextField {
+class LoginTextField: UITextField, UITextFieldDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,7 +17,12 @@ class LoginTextField: UITextField {
         defaultTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.label
         ]
-        
         autocorrectionType = .no
+        delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.resignFirstResponder()
+        return true
     }
 }
