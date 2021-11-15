@@ -7,12 +7,14 @@
 
 import Foundation
 
-struct UdacityClientErrorResponse: Codable, Error {
-    let status: Int
+struct UdacityClientErrorResponse: Codable, LocalizedError {
     let error: String
     
     enum CodingKeys: String, CodingKey {
-        case status
         case error
+    }
+    
+    var errorDescription: String? {
+        return error
     }
 }

@@ -5,8 +5,6 @@
 //  Created by Ty Hopp on 12/11/21.
 //
 
-import Foundation
-
 import UIKit
 
 // TODO: Implement
@@ -19,5 +17,7 @@ class LoginTextField: UITextField {
         defaultTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.label
         ]
+        
+        autocorrectionType = .no
     }
 }

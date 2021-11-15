@@ -10,26 +10,48 @@ import UIKit
 class LoginViewController: UIViewController {
     
     // MARK: Outlets
+    
     @IBOutlet weak var emailTextField: LoginTextField!
-    @IBOutlet weak var passworldTextField: LoginTextField!
+    @IBOutlet weak var passwordTextField: LoginTextField!
     @IBOutlet weak var loginButton: UIButton!
     
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Test login method
-        UdacityClient.login(username: "account@domain.com", password: "********", completion: { success, error in
-            print("Success: \(success)")
-            
-            print("Auth session id: \(UdacityClient.Auth.sessionId)")
-            print("Auth session expiration: \(UdacityClient.Auth.sessionExpiration)")
-            
+        passwordTextField.isSecureTextEntry = true
+        loginButton.isEnabled = false
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func emailTextChanged(_ sender: Any) {
+        checkMayLogin()
+    }
+    
+    @IBAction func passwordTextChanged(_ sender: Any) {
+        checkMayLogin()
+    }
+    
+    @IBAction func login(_ sender: Any) -> Void {
+        UdacityClient.login(username: emailTextField.text!, password: passwordTextField.text!, completion: { success, error in
             if let error = error {
-                print("Error: \(error)")
+                self.showLoginErrorAlert(error: error)
             }
         })
+    }
+    
+    // MARK: Helper
+    
+    private func checkMayLogin() -> Void {
+        // Would use proper validation in a real application, this is fine here
+        loginButton.isEnabled = emailTextField.hasText && passwordTextField.hasText
+    }
+    
+    private func showLoginErrorAlert(error: Error) {
+        let alert = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        show(alert, sender: nil)
     }
 }
 
