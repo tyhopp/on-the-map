@@ -53,7 +53,9 @@ class LoginViewController: UIViewController {
         checkMayLogin()
     }
     
-    @IBAction func login(_ sender: Any) -> Void {
+    @IBAction func loginButtonPressed(_ sender: Any) -> Void {
+        emailTextField.endEditing(true)
+        passwordTextField.endEditing(true)
         toggleLoadingIndicator(loading: true)
         
         UdacityClient.login(username: emailTextField.text!, password: passwordTextField.text!, completion: { success, error in
