@@ -66,7 +66,11 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            // TODO - Segue to tab navigator map view
+            if let tabViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabViewController") {
+                if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                    scene.setRootViewController(tabViewController)
+                }
+            }
         })
     }
     
