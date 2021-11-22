@@ -60,6 +60,7 @@ extension SceneDelegate {
     func setRootViewController(_ viewController: UIViewController) {
          if let window = self.window {
             window.rootViewController = viewController
+             UIView.transition(with: window, duration: 0.8, options: .transitionFlipFromLeft, animations: nil)
          }
     }
 }
