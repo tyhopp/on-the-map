@@ -9,6 +9,13 @@ import UIKit
 
 class MapViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        UdacityClient.getStudentLocations(completion: { response, error in
+            print(response as Any)
+        })
+    }
+    
     // MARK: Outlets
     
     @IBOutlet weak var logoutButton: UIBarButtonItem!

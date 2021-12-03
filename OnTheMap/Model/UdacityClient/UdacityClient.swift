@@ -16,6 +16,7 @@ class UdacityClient {
     
     enum Endpoint {
         static let session = URL(string: "https://onthemap-api.udacity.com/v1/session")!
+        static let studentLocation = URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation")!
     }
     
     // MARK: Requests
@@ -59,6 +60,16 @@ class UdacityClient {
         }
     }
     
+    class func getStudentLocations(completion: @escaping (UdacityClientStudentLocationResponse?, Error?) -> Void) {
+        requestTask(url: Endpoint.studentLocation, headers: nil, responseType: UdacityClientStudentLocationResponse.self) { response, error in
+            if let response = response {
+                completion(response, error)
+            } else {
+                completion(response, error)
+            }
+        }
+    }
+    
     // MARK: Generic tasks
     
     private class func requestTask<ResponseType: Decodable>(url: URL, method: String = "GET", headers: [String: String]?, body: Data? = nil, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
@@ -88,8 +99,10 @@ class UdacityClient {
                 return
             }
             
-            // Remove first 5 characters Udacity API has for security
-            data = data.subdata(in: 5..<data.count)
+            // Remove first 5 characters for session endpoint (strange Udacity security measure)
+            if url == Endpoint.session {
+                data = data.subdata(in: 5..<data.count)
+            }
             
             let decoder = JSONDecoder()
             

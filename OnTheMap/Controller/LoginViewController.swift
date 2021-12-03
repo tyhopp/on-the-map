@@ -16,10 +16,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     // MARK: Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -66,12 +62,16 @@ class LoginViewController: UIViewController {
                 return
             }
             
+            print("Navigating to tabview")
+            
             if let tabViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabViewController") {
                 if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                     scene.setRootViewController(tabViewController)
                 }
             }
         })
+        
+        print("Outside login call")
     }
     
     // MARK: Keyboard
