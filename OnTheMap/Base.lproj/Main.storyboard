@@ -140,7 +140,7 @@
                         <viewLayoutGuide key="safeArea" id="jdg-VU-jJB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="onJ-fe-Fo1"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" landscapeImage="icon_listview-deselected" selectedImage="icon_listview-selected" id="onJ-fe-Fo1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlO-Di-AwM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,16 +177,16 @@
                         <viewLayoutGuide key="safeArea" id="fFX-aT-MO1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="92U-kx-OCQ" firstAttribute="trailing" secondItem="fFX-aT-MO1" secondAttribute="trailing" id="HfY-E6-VvQ"/>
+                            <constraint firstItem="92U-kx-OCQ" firstAttribute="trailing" secondItem="6Ta-Mt-avq" secondAttribute="trailing" id="HfY-E6-VvQ"/>
                             <constraint firstItem="Moe-Nl-1Td" firstAttribute="top" secondItem="92U-kx-OCQ" secondAttribute="bottom" id="IIN-Qc-3zm"/>
-                            <constraint firstItem="92U-kx-OCQ" firstAttribute="leading" secondItem="fFX-aT-MO1" secondAttribute="leading" id="Omr-oF-Ajb"/>
+                            <constraint firstItem="92U-kx-OCQ" firstAttribute="leading" secondItem="6Ta-Mt-avq" secondAttribute="leading" id="Omr-oF-Ajb"/>
                             <constraint firstItem="92U-kx-OCQ" firstAttribute="top" secondItem="fFX-aT-MO1" secondAttribute="top" id="bF8-Fu-7KI"/>
-                            <constraint firstItem="Moe-Nl-1Td" firstAttribute="leading" secondItem="fFX-aT-MO1" secondAttribute="leading" id="enF-Tb-soT"/>
-                            <constraint firstItem="Moe-Nl-1Td" firstAttribute="trailing" secondItem="fFX-aT-MO1" secondAttribute="trailing" id="rWq-W2-jZ1"/>
+                            <constraint firstItem="Moe-Nl-1Td" firstAttribute="leading" secondItem="6Ta-Mt-avq" secondAttribute="leading" id="enF-Tb-soT"/>
+                            <constraint firstItem="Moe-Nl-1Td" firstAttribute="trailing" secondItem="6Ta-Mt-avq" secondAttribute="trailing" id="rWq-W2-jZ1"/>
                             <constraint firstItem="Moe-Nl-1Td" firstAttribute="bottom" secondItem="fFX-aT-MO1" secondAttribute="bottom" id="x78-MW-5vR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="oAz-ZF-nOu"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" landscapeImage="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="oAz-ZF-nOu"/>
                     <connections>
                         <outlet property="logoutButton" destination="OPd-QV-477" id="bS9-uE-OSq"/>
                         <outlet property="mapView" destination="Moe-Nl-1Td" id="167-Qx-DBh"/>
