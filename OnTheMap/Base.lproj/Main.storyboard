@@ -149,7 +149,7 @@
         <!--Map View Controller-->
         <scene sceneID="8Lr-dh-fyc">
             <objects>
-                <viewController id="z4E-c8-Ux6" userLabel="Map View Controller" sceneMemberID="viewController">
+                <viewController id="z4E-c8-Ux6" userLabel="Map View Controller" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ta-Mt-avq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,7 +159,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="On The Map" id="saf-ch-Lv0">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="OPd-QV-477"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="OPd-QV-477">
+                                            <connections>
+                                                <action selector="logoutButtonPressed:" destination="z4E-c8-Ux6" id="V0K-Ka-aAp"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem image="icon_addpin" id="wBz-k3-E88"/>
                                             <barButtonItem image="icon_refresh" id="Ynl-e6-J5Q"/>
@@ -172,6 +176,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="oAz-ZF-nOu"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="OPd-QV-477" id="bS9-uE-OSq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJo-pa-qJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

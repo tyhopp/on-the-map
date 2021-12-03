@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
             self.toggleLoadingIndicator(loading: false)
             
             if let error = error {
-                self.showLoginErrorAlert(error: error)
+                self.showErrorAlert(error: error, title: "Login Failed")
                 return
             }
             
@@ -97,31 +97,11 @@ class LoginViewController: UIViewController {
         loginButton.isEnabled = emailTextField.hasText && passwordTextField.hasText
     }
     
-    private func showLoginErrorAlert(error: Error) {
-        let alert = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-        show(alert, sender: nil)
-    }
-    
     private func toggleLoadingIndicator(loading: Bool) {
         loginButton.isEnabled = !loading
         loginButton.setTitle(loading ? "" : "Log In", for: .normal)
-        loginButton.setImage(loading ? UIImage(named: "loading") : UIImage(), for: .normal)
+        loginButton.setImage(loading ? UIImage(named: "loading")?.withTintColor(.systemCyan) : UIImage(), for: .normal)
         rotate(view: loginButton.imageView, start: loading)
-    }
-    
-    private func rotate(view: UIView?, start: Bool) {
-        guard start else {
-            view?.layer.removeAnimation(forKey: "rotationAnimation")
-            return
-        }
-        
-        let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotation.toValue = NSNumber(value: Double.pi * 2)
-        rotation.duration = 1
-        rotation.isCumulative = true
-        rotation.repeatCount = Float.greatestFiniteMagnitude
-        view?.layer.add(rotation, forKey: "rotationAnimation")
     }
 }
 
