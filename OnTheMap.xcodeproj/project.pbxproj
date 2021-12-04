@@ -18,8 +18,11 @@
 		E52C5A0A2759C24200BEE60A /* UdacityClientLogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C5A092759C24200BEE60A /* UdacityClientLogoutResponse.swift */; };
 		E539DED0275B59FD00C5B268 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E539DECF275B59FD00C5B268 /* TableViewController.swift */; };
 		E539DED4275B5C4000C5B268 /* NavBarLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E539DED3275B5C4000C5B268 /* NavBarLogicController.swift */; };
+		E539DED6275B6AE800C5B268 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E539DED5275B6AE800C5B268 /* TableCell.swift */; };
+		E539DED8275B6BA700C5B268 /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E539DED7275B6BA700C5B268 /* TableCellView.swift */; };
+		E539DEDA275B729600C5B268 /* UIViewController+ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E539DED9275B729600C5B268 /* UIViewController+ErrorAlert.swift */; };
+		E539DEDC275B72E100C5B268 /* UIViewController+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E539DEDB275B72E100C5B268 /* UIViewController+Animation.swift */; };
 		E53C565E273BB4A20077B63E /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C565D273BB4A20077B63E /* UdacityClient.swift */; };
-		E53C5660273BB68C0077B63E /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C565F273BB68C0077B63E /* StudentInformation.swift */; };
 		E53C5664273BC0CE0077B63E /* UdacityClientLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C5663273BC0CE0077B63E /* UdacityClientLoginRequest.swift */; };
 		E53C5666273BC0DC0077B63E /* UdacityClientLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C5665273BC0DC0077B63E /* UdacityClientLoginResponse.swift */; };
 		E53C5668273BCC510077B63E /* UdacityClientErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C5667273BCC510077B63E /* UdacityClientErrorResponse.swift */; };
@@ -42,8 +45,11 @@
 		E52C5A092759C24200BEE60A /* UdacityClientLogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClientLogoutResponse.swift; sourceTree = "<group>"; };
 		E539DECF275B59FD00C5B268 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E539DED3275B5C4000C5B268 /* NavBarLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarLogicController.swift; sourceTree = "<group>"; };
+		E539DED5275B6AE800C5B268 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		E539DED7275B6BA700C5B268 /* TableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
+		E539DED9275B729600C5B268 /* UIViewController+ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorAlert.swift"; sourceTree = "<group>"; };
+		E539DEDB275B72E100C5B268 /* UIViewController+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Animation.swift"; sourceTree = "<group>"; };
 		E53C565D273BB4A20077B63E /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
-		E53C565F273BB68C0077B63E /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		E53C5663273BC0CE0077B63E /* UdacityClientLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClientLoginRequest.swift; sourceTree = "<group>"; };
 		E53C5665273BC0DC0077B63E /* UdacityClientLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClientLoginResponse.swift; sourceTree = "<group>"; };
 		E53C5667273BCC510077B63E /* UdacityClientErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClientErrorResponse.swift; sourceTree = "<group>"; };
@@ -111,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				E53C5662273BC06C0077B63E /* UdacityClient */,
-				E53C565F273BB68C0077B63E /* StudentInformation.swift */,
+				E539DED5275B6AE800C5B268 /* TableCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +127,7 @@
 			children = (
 				E58774AB273E0360007251EC /* LoginTextField.swift */,
 				E58774B5273E4EED007251EC /* LoginSignupTextView.swift */,
+				E539DED7275B6BA700C5B268 /* TableCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				E58774AD273E0BDD007251EC /* UIViewController+StoryboardPreview.swift */,
+				E539DED9275B729600C5B268 /* UIViewController+ErrorAlert.swift */,
+				E539DEDB275B72E100C5B268 /* UIViewController+Animation.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -217,10 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E539DEDA275B729600C5B268 /* UIViewController+ErrorAlert.swift in Sources */,
 				E58774AC273E0360007251EC /* LoginTextField.swift in Sources */,
 				E539DED0275B59FD00C5B268 /* TableViewController.swift in Sources */,
+				E539DED6275B6AE800C5B268 /* TableCell.swift in Sources */,
 				E5109E87273B675800CB57D5 /* LoginViewController.swift in Sources */,
 				E539DED4275B5C4000C5B268 /* NavBarLogicController.swift in Sources */,
+				E539DEDC275B72E100C5B268 /* UIViewController+Animation.swift in Sources */,
 				E52C5A0A2759C24200BEE60A /* UdacityClientLogoutResponse.swift in Sources */,
 				E53C565E273BB4A20077B63E /* UdacityClient.swift in Sources */,
 				E5109E83273B675800CB57D5 /* AppDelegate.swift in Sources */,
@@ -230,7 +242,7 @@
 				E53C5666273BC0DC0077B63E /* UdacityClientLoginResponse.swift in Sources */,
 				E52C5A082759BAB200BEE60A /* MapViewController.swift in Sources */,
 				E58774AE273E0BDD007251EC /* UIViewController+StoryboardPreview.swift in Sources */,
-				E53C5660273BB68C0077B63E /* StudentInformation.swift in Sources */,
+				E539DED8275B6BA700C5B268 /* TableCellView.swift in Sources */,
 				E5109E85273B675800CB57D5 /* SceneDelegate.swift in Sources */,
 				E58774B6273E4EED007251EC /* LoginSignupTextView.swift in Sources */,
 			);

@@ -7,23 +7,61 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var navBarLogicController: NavBarLogicController?
+    var tableCells = [TableCell]()
+    
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navBarLogicController = NavBarLogicController(self)
+        fillTableView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: Outlet
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: Delegate
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableCells.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentLocationTableCell") as! TableCellView
+        let cellData = tableCells[(indexPath as NSIndexPath).row]
+        
+        cell.name.text = cellData.name
+        cell.mediaURL.text = cellData.mediaURL
+        
+        // TODO - Style text
+            
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO - Handle select
+    }
+    
+    // MARK: Helper
+    
+    func fillTableView() {
+        // In a real project we would share data with the map view and conditionally make network requests, but we'll consider it out of scope for this project
+        
+        UdacityClient.getStudentLocations(completion: { response, error in
+            if let locations = response?.results {
+                for location in locations {
+                    let cell = TableCell(name: "\(location.firstName) \(location.lastName)", mediaURL: location.mediaURL)
+                    self.tableCells.append(cell)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
+    }
 }

@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
             self.toggleLoadingIndicator(loading: false)
             
             if let error = error {
-                self.showErrorAlert(error: error, title: "Login Failed")
+                self.showErrorAlert(error, title: "Login Failed")
                 return
             }
             

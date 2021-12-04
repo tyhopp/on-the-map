@@ -31,7 +31,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.navBarLogicController?.handleLogoutButtonPress(logoutButton)
     }
     
-    // MARK: Map view delegate
+    // MARK: Delegate
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
@@ -60,7 +60,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: Helper
     
-    private func fillMapView() {
+    func fillMapView() {
+        // In a real project we would share data with the table view and conditionally make network requests, but we'll consider it out of scope for this project
+        
         UdacityClient.getStudentLocations(completion: { response, error in
             var annotations = [MKPointAnnotation]()
             

@@ -22,7 +22,7 @@ class NavBarLogicController {
             self.toggleLoadingIndicator(logoutButton, loading: false)
             
             if let error = error {
-                self.showErrorAlert(error, title: "Logout Failed")
+                self.context.showErrorAlert(error, title: "Logout Failed")
                 return
             }
             
@@ -39,26 +39,6 @@ class NavBarLogicController {
         logoutButton.title = loading ? "" : "Logout"
         let imageView = UIImageView(image: loading ? UIImage(named: "loading")?.withTintColor(.systemBlue) : UIImage())
         logoutButton.customView = imageView
-        rotate(view: imageView, start: loading)
-    }
-    
-    func showErrorAlert(_ error: Error, title: String) -> Void {
-        let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-        context.show(alert, sender: nil)
-    }
-    
-    func rotate(view: UIView?, start: Bool) -> Void {
-        guard start else {
-            view?.layer.removeAnimation(forKey: "rotationAnimation")
-            return
-        }
-        
-        let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotation.toValue = NSNumber(value: Double.pi * 2)
-        rotation.duration = 1
-        rotation.isCumulative = true
-        rotation.repeatCount = Float.greatestFiniteMagnitude
-        view?.layer.add(rotation, forKey: "rotationAnimation")
+        context.rotate(view: imageView, start: loading)
     }
 }
