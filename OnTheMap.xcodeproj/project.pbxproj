@@ -13,11 +13,11 @@
 		E5109E8A273B675800CB57D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5109E88273B675800CB57D5 /* Main.storyboard */; };
 		E5109E8C273B675800CB57D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5109E8B273B675800CB57D5 /* Assets.xcassets */; };
 		E5109E8F273B675800CB57D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5109E8D273B675800CB57D5 /* LaunchScreen.storyboard */; };
-		E51A86A0275A2349009C676D /* UIViewController+ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A869F275A2349009C676D /* UIViewController+ErrorAlert.swift */; };
-		E51A86A4275A2448009C676D /* UIViewController+RotateAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A86A3275A2448009C676D /* UIViewController+RotateAnimation.swift */; };
 		E51A86A6275A2943009C676D /* UdacityClientStudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A86A5275A2943009C676D /* UdacityClientStudentLocationResponse.swift */; };
 		E52C5A082759BAB200BEE60A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C5A072759BAB200BEE60A /* MapViewController.swift */; };
 		E52C5A0A2759C24200BEE60A /* UdacityClientLogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C5A092759C24200BEE60A /* UdacityClientLogoutResponse.swift */; };
+		E539DED0275B59FD00C5B268 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E539DECF275B59FD00C5B268 /* TableViewController.swift */; };
+		E539DED4275B5C4000C5B268 /* NavBarLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E539DED3275B5C4000C5B268 /* NavBarLogicController.swift */; };
 		E53C565E273BB4A20077B63E /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C565D273BB4A20077B63E /* UdacityClient.swift */; };
 		E53C5660273BB68C0077B63E /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C565F273BB68C0077B63E /* StudentInformation.swift */; };
 		E53C5664273BC0CE0077B63E /* UdacityClientLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C5663273BC0CE0077B63E /* UdacityClientLoginRequest.swift */; };
@@ -37,11 +37,11 @@
 		E5109E8B273B675800CB57D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5109E8E273B675800CB57D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5109E90273B675800CB57D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E51A869F275A2349009C676D /* UIViewController+ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorAlert.swift"; sourceTree = "<group>"; };
-		E51A86A3275A2448009C676D /* UIViewController+RotateAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+RotateAnimation.swift"; sourceTree = "<group>"; };
 		E51A86A5275A2943009C676D /* UdacityClientStudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClientStudentLocationResponse.swift; sourceTree = "<group>"; };
 		E52C5A072759BAB200BEE60A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E52C5A092759C24200BEE60A /* UdacityClientLogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClientLogoutResponse.swift; sourceTree = "<group>"; };
+		E539DECF275B59FD00C5B268 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E539DED3275B5C4000C5B268 /* NavBarLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarLogicController.swift; sourceTree = "<group>"; };
 		E53C565D273BB4A20077B63E /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		E53C565F273BB68C0077B63E /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		E53C5663273BC0CE0077B63E /* UdacityClientLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClientLoginRequest.swift; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 			children = (
 				E5109E86273B675800CB57D5 /* LoginViewController.swift */,
 				E52C5A072759BAB200BEE60A /* MapViewController.swift */,
+				E539DECF275B59FD00C5B268 /* TableViewController.swift */,
+				E539DED3275B5C4000C5B268 /* NavBarLogicController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -140,8 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				E58774AD273E0BDD007251EC /* UIViewController+StoryboardPreview.swift */,
-				E51A869F275A2349009C676D /* UIViewController+ErrorAlert.swift */,
-				E51A86A3275A2448009C676D /* UIViewController+RotateAnimation.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -217,16 +217,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E51A86A0275A2349009C676D /* UIViewController+ErrorAlert.swift in Sources */,
 				E58774AC273E0360007251EC /* LoginTextField.swift in Sources */,
+				E539DED0275B59FD00C5B268 /* TableViewController.swift in Sources */,
 				E5109E87273B675800CB57D5 /* LoginViewController.swift in Sources */,
+				E539DED4275B5C4000C5B268 /* NavBarLogicController.swift in Sources */,
 				E52C5A0A2759C24200BEE60A /* UdacityClientLogoutResponse.swift in Sources */,
 				E53C565E273BB4A20077B63E /* UdacityClient.swift in Sources */,
 				E5109E83273B675800CB57D5 /* AppDelegate.swift in Sources */,
 				E51A86A6275A2943009C676D /* UdacityClientStudentLocationResponse.swift in Sources */,
 				E53C5664273BC0CE0077B63E /* UdacityClientLoginRequest.swift in Sources */,
 				E53C5668273BCC510077B63E /* UdacityClientErrorResponse.swift in Sources */,
-				E51A86A4275A2448009C676D /* UIViewController+RotateAnimation.swift in Sources */,
 				E53C5666273BC0DC0077B63E /* UdacityClientLoginResponse.swift in Sources */,
 				E52C5A082759BAB200BEE60A /* MapViewController.swift in Sources */,
 				E58774AE273E0BDD007251EC /* UIViewController+StoryboardPreview.swift in Sources */,

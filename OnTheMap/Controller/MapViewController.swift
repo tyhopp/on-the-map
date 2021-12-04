@@ -10,8 +10,13 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
+    var navBarLogicController: NavBarLogicController?
+    
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBarLogicController = NavBarLogicController(self)
         fillMapView()
     }
     
@@ -23,22 +28,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // MARK: Actions
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
-        self.toggleLoadingIndicator(loading: true)
-        
-        UdacityClient.logout(completion: { success, error in
-            self.toggleLoadingIndicator(loading: false)
-            
-            if let error = error {
-                self.showErrorAlert(error: error, title: "Logout Failed")
-                return
-            }
-            
-            if let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") {
-                if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-                    scene.setRootViewController(loginViewController)
-                }
-            }
-        })
+        self.navBarLogicController?.handleLogoutButtonPress(logoutButton)
     }
     
     // MARK: Map view delegate
@@ -97,13 +87,5 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
             self.mapView.addAnnotations(annotations)
         })
-    }
-    
-    private func toggleLoadingIndicator(loading: Bool) {
-        logoutButton.isEnabled = !loading
-        logoutButton.title = loading ? "" : "Logout"
-        let imageView = UIImageView(image: loading ? UIImage(named: "loading")?.withTintColor(.systemBlue) : UIImage())
-        logoutButton.customView = imageView
-        rotate(view: imageView, start: loading)
     }
 }
