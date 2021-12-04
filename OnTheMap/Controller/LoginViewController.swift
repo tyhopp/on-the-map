@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
         view.frame.origin.y += getHalfKeyboardHeight(notification)
     }
     
-    private func getHalfKeyboardHeight(_ notification: Notification) -> CGFloat {
+    func getHalfKeyboardHeight(_ notification: Notification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height / 2
@@ -88,28 +88,15 @@ class LoginViewController: UIViewController {
     
     // MARK: Helper
     
-    private func checkMayLogin() -> Void {
+    func checkMayLogin() -> Void {
         // Would use proper validation in a real application, this is fine here
         loginButton.isEnabled = emailTextField.hasText && passwordTextField.hasText
     }
     
-    private func toggleLoadingIndicator(loading: Bool) {
+    func toggleLoadingIndicator(loading: Bool) {
         loginButton.isEnabled = !loading
         loginButton.setTitle(loading ? "" : "Log In", for: .normal)
         loginButton.setImage(loading ? UIImage(named: "loading")?.withTintColor(.systemCyan) : UIImage(), for: .normal)
         rotate(view: loginButton.imageView, start: loading)
     }
 }
-
-// MARK: Preview
-
-//#if canImport(SwiftUI) && DEBUG
-//import SwiftUI
-//
-//@available(iOS 13.0, *)
-//struct LoginView: PreviewProvider {
-//    static var previews: some View {
-//        LoginViewController().preview(storyboardId: "LoginViewController").previewInterfaceOrientation(.portrait)
-//    }
-//}
-//#endif
