@@ -123,9 +123,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="btI-3U-tWr">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btI-3U-tWr">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="On The Map" id="pi5-nc-QDI">
                                         <barButtonItem key="leftBarButtonItem" title="Logout" id="fxA-De-j0Q"/>
@@ -136,15 +135,38 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="USY-uh-m4i">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentLocationTableCell" id="8y5-5N-fdF">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8y5-5N-fdF" id="Hfz-jp-bc3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jdg-VU-jJB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="USY-uh-m4i" firstAttribute="trailing" secondItem="wTa-DT-edV" secondAttribute="trailing" id="0Vv-gx-o1e"/>
+                            <constraint firstItem="btI-3U-tWr" firstAttribute="leading" secondItem="wTa-DT-edV" secondAttribute="leading" id="7qb-14-0Hg"/>
+                            <constraint firstItem="btI-3U-tWr" firstAttribute="top" secondItem="jdg-VU-jJB" secondAttribute="top" id="ChQ-Tj-BL3"/>
+                            <constraint firstItem="jdg-VU-jJB" firstAttribute="bottom" secondItem="USY-uh-m4i" secondAttribute="bottom" id="NPg-UY-aYR"/>
+                            <constraint firstItem="btI-3U-tWr" firstAttribute="trailing" secondItem="wTa-DT-edV" secondAttribute="trailing" id="lSd-Jw-Keo"/>
+                            <constraint firstItem="USY-uh-m4i" firstAttribute="leading" secondItem="wTa-DT-edV" secondAttribute="leading" id="lr2-yw-jBg"/>
+                            <constraint firstItem="USY-uh-m4i" firstAttribute="top" secondItem="btI-3U-tWr" secondAttribute="bottom" id="oXu-9F-WFc"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" landscapeImage="icon_listview-deselected" selectedImage="icon_listview-selected" id="onJ-fe-Fo1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlO-Di-AwM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="416"/>
+            <point key="canvasLocation" x="1853.6231884057972" y="415.84821428571428"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="8Lr-dh-fyc">
