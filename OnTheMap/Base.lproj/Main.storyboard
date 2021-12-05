@@ -156,6 +156,9 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pin" translatesAutoresizingMaskIntoConstraints="NO" id="vhg-8D-PnU">
                                                     <rect key="frame" x="20" y="10" width="60" height="60"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="fz3-zR-1VV"/>
                                                         <constraint firstAttribute="width" constant="60" id="sjs-5V-h5t"/>
@@ -177,7 +180,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="3aw-HF-PEy" firstAttribute="leading" secondItem="qKW-bT-rUA" secondAttribute="leading" constant="20" id="24j-bD-oSg"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="632-kR-Lqo" secondAttribute="trailing" constant="20" id="8Ec-gN-soC"/>

@@ -48,14 +48,20 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.name.text = cellData.name
         cell.mediaURL.text = cellData.mediaURL
-        
-        // TODO - Style text
             
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO - Handle select
+        let cellData = tableCells[(indexPath as NSIndexPath).row]
+        if let url = URL(string: cellData.mediaURL) {
+            UIApplication.shared.open(url, completionHandler: { success in
+                tableView.deselectRow(at: indexPath, animated: true)
+                if !success {
+                    self.showErrorAlert(title: "Failed to open URL", description: "Ensure that the URL is valid.")
+                }
+            })
+        }
     }
     
     // MARK: Helper

@@ -22,7 +22,7 @@ class NavBarLogicController {
             self.toggleLoadingIndicator(logoutButton, loading: false, title: "Logout")
             
             if let error = error {
-                self.context.showErrorAlert(error, title: "Logout Failed")
+                self.context.showErrorAlert(title: "Logout Failed", description: error.localizedDescription)
                 return
             }
             
