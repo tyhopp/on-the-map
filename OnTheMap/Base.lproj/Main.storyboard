@@ -160,7 +160,6 @@
                                                         <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                                     </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="fz3-zR-1VV"/>
                                                         <constraint firstAttribute="width" constant="60" id="sjs-5V-h5t"/>
                                                     </constraints>
                                                 </imageView>
@@ -184,6 +183,7 @@
                                                     <constraints>
                                                         <constraint firstItem="3aw-HF-PEy" firstAttribute="leading" secondItem="qKW-bT-rUA" secondAttribute="leading" constant="20" id="24j-bD-oSg"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="632-kR-Lqo" secondAttribute="trailing" constant="20" id="8Ec-gN-soC"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="CaL-zW-kuH"/>
                                                         <constraint firstAttribute="bottom" secondItem="3aw-HF-PEy" secondAttribute="bottom" constant="12" id="VJA-to-lrY"/>
                                                         <constraint firstItem="632-kR-Lqo" firstAttribute="top" secondItem="qKW-bT-rUA" secondAttribute="top" constant="12" id="aTT-XC-3S1"/>
                                                         <constraint firstItem="632-kR-Lqo" firstAttribute="leading" secondItem="qKW-bT-rUA" secondAttribute="leading" constant="20" id="cr7-qx-Jcx"/>
