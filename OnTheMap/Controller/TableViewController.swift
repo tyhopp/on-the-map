@@ -23,6 +23,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: Outlet
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    
+    // MARK: Action
+    
+    @IBAction func refreshButtonPressed(_ sender: Any) {
+        self.navBarLogicController?.handleRefreshButtonPress(refreshButton, reload: fillTableView)
+    }
     
     // MARK: Delegate
     
@@ -48,7 +55,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: Helper
     
-    func fillTableView() {
+    func fillTableView(completion: @escaping () -> Void = {}) -> Void {
         // In a real project we would share data with the map view and conditionally make network requests, but we'll consider it out of scope for this project
         
         UdacityClient.getStudentLocations(completion: { response, error in
@@ -62,6 +69,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            
+            completion()
         })
     }
 }

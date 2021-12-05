@@ -16,10 +16,10 @@ class NavBarLogicController {
     }
     
     func handleLogoutButtonPress(_ logoutButton: UIBarButtonItem) -> Void {
-        toggleLoadingIndicator(logoutButton, loading: true)
+        toggleLoadingIndicator(logoutButton, loading: true, title: "Logout")
         
         UdacityClient.logout(completion: { success, error in
-            self.toggleLoadingIndicator(logoutButton, loading: false)
+            self.toggleLoadingIndicator(logoutButton, loading: false, title: "Logout")
             
             if let error = error {
                 self.context.showErrorAlert(error, title: "Logout Failed")
@@ -34,11 +34,20 @@ class NavBarLogicController {
         })
     }
     
-    func toggleLoadingIndicator(_ logoutButton: UIBarButtonItem, loading: Bool) -> Void {
-        logoutButton.isEnabled = !loading
-        logoutButton.title = loading ? "" : "Logout"
-        let imageView = UIImageView(image: loading ? UIImage(named: "loading")?.withTintColor(.systemBlue) : UIImage())
-        logoutButton.customView = imageView
-        context.rotate(view: imageView, start: loading)
+    func handleRefreshButtonPress(_ refreshButton: UIBarButtonItem, reload: (_ completion: @escaping () -> Void) -> Void) {
+        toggleLoadingIndicator(refreshButton, loading: true, image: UIImage(named: "icon_refresh")!)
+        reload() {
+            self.toggleLoadingIndicator(refreshButton, loading: false, image: UIImage(named: "icon_refresh")!)
+        }
+    }
+    
+    func toggleLoadingIndicator(_ button: UIBarButtonItem, loading: Bool, title: String = "", image: UIImage = UIImage()) -> Void {
+        button.isEnabled = !loading
+        button.title = loading ? "" : title
+        let loadingImageView = UIImageView(image: UIImage(named: "loading")?.withTintColor(.systemBlue))
+        button.customView = loading ? loadingImageView : nil
+        if loading {
+            context.rotate(view: loadingImageView, start: loading)
+        }
     }
 }

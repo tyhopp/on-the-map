@@ -23,12 +23,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // MARK: Outlets
     
     @IBOutlet weak var logoutButton: UIBarButtonItem!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     
     // MARK: Actions
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         self.navBarLogicController?.handleLogoutButtonPress(logoutButton)
+    }
+    
+    @IBAction func refreshButtonPressed(_ sender: Any) {
+        self.navBarLogicController?.handleRefreshButtonPress(refreshButton, reload: fillMapView)
     }
     
     // MARK: Delegate
@@ -60,7 +65,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: Helper
     
-    func fillMapView() {
+    func fillMapView(completion: @escaping () -> Void = {}) -> Void {
         // In a real project we would share data with the table view and conditionally make network requests, but we'll consider it out of scope for this project
         
         UdacityClient.getStudentLocations(completion: { response, error in
@@ -88,6 +93,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         
             self.mapView.addAnnotations(annotations)
+            
+            completion()
         })
     }
 }
