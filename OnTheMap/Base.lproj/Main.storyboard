@@ -127,7 +127,11 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="On The Map" id="pi5-nc-QDI">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="fxA-De-j0Q"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="fxA-De-j0Q">
+                                            <connections>
+                                                <action selector="logoutButtonPressed:" destination="1Xk-Vp-oTc" id="7w2-rg-T3y"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem image="icon_addpin" id="q5i-TZ-67L"/>
                                             <barButtonItem image="icon_refresh" id="d9R-HZ-QhO">
@@ -220,6 +224,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" landscapeImage="icon_listview-deselected" selectedImage="icon_listview-selected" id="onJ-fe-Fo1"/>
                     <connections>
+                        <outlet property="logoutButton" destination="fxA-De-j0Q" id="3y5-2r-9Iv"/>
                         <outlet property="refreshButton" destination="d9R-HZ-QhO" id="dha-jV-ZqG"/>
                         <outlet property="tableView" destination="USY-uh-m4i" id="XgJ-Ec-RQZ"/>
                     </connections>

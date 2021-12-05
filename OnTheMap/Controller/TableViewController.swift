@@ -23,9 +23,14 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: Outlet
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     // MARK: Action
+    
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        self.navBarLogicController?.handleLogoutButtonPress(logoutButton)
+    }
     
     @IBAction func refreshButtonPressed(_ sender: Any) {
         self.navBarLogicController?.handleRefreshButtonPress(refreshButton, reload: fillTableView)
