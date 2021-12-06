@@ -434,14 +434,39 @@
                     <view key="view" contentMode="scaleToFill" id="08v-NS-vsr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EnO-nQ-a66">
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IU-nK-IvX" userLabel="Finish Button">
+                                <rect key="frame" x="20" y="650.5" width="374" height="51.5"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Finish" buttonSize="large">
+                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B2a-W6-GIZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dMa-6n-85J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dMa-6n-85J" firstAttribute="trailing" secondItem="EnO-nQ-a66" secondAttribute="trailing" id="7It-D5-nTn"/>
+                            <constraint firstItem="8IU-nK-IvX" firstAttribute="leading" secondItem="dMa-6n-85J" secondAttribute="leading" constant="20" id="Izf-xr-GYW"/>
+                            <constraint firstItem="dMa-6n-85J" firstAttribute="bottom" secondItem="EnO-nQ-a66" secondAttribute="bottom" id="QLo-0y-ky6"/>
+                            <constraint firstItem="8IU-nK-IvX" firstAttribute="bottom" secondItem="EnO-nQ-a66" secondAttribute="bottom" constant="-140" id="RnB-ii-ZMy"/>
+                            <constraint firstItem="EnO-nQ-a66" firstAttribute="leading" secondItem="dMa-6n-85J" secondAttribute="leading" id="Vnm-Kn-aW5"/>
+                            <constraint firstItem="EnO-nQ-a66" firstAttribute="top" secondItem="dMa-6n-85J" secondAttribute="top" id="cnr-db-UkE"/>
+                            <constraint firstItem="dMa-6n-85J" firstAttribute="trailing" secondItem="8IU-nK-IvX" secondAttribute="trailing" constant="20" id="vuN-o4-TwR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="56J-jH-SYt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8g-ZQ-qZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4223" y="56"/>
+            <point key="canvasLocation" x="4221.739130434783" y="55.580357142857139"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
