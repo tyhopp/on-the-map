@@ -10,7 +10,7 @@ import UIKit
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var navBarLogicController: NavBarLogicController?
-    var tableCells = [TableCell]()
+    var tableCells = [StudentInformation]()
     
     // MARK: Lifecycle
     
@@ -46,7 +46,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentLocationTableCell") as! TableCellView
         let cellData = tableCells[(indexPath as NSIndexPath).row]
         
-        cell.name.text = cellData.name
+        cell.name.text = "\(cellData.firstName) \(cellData.lastName)"
         cell.mediaURL.text = cellData.mediaURL
             
         return cell
@@ -70,11 +70,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // In a real project we would share data with the map view and conditionally make network requests, but we'll consider it out of scope for this project
         
         UdacityClient.getStudentLocations(completion: { response, error in
-            if let locations = response?.results {
-                for location in locations {
-                    let cell = TableCell(name: "\(location.firstName) \(location.lastName)", mediaURL: location.mediaURL)
-                    self.tableCells.append(cell)
-                }
+            if let studentInfo = response?.results {
+                self.tableCells = studentInfo
             }
             
             DispatchQueue.main.async {
