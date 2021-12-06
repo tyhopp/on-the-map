@@ -16,12 +16,12 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.inputLogicController = InputLogicController(self)
-        setupObservers()
+        inputLogicController?.setupObservers()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        removeObservers()
+        inputLogicController?.removeObservers()
     }
     
     // MARK: Outlets
@@ -59,33 +59,5 @@ class LoginViewController: UIViewController {
                 }
             }
         })
-    }
-    
-    // MARK: Observers
-    
-    func setupObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    func removeObservers() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    // MARK: Keyboard
-    
-    @objc func keyboardWillShow(_ notification: Notification) -> Void {
-        view.frame.origin.y = -getHalfKeyboardHeight(notification)
-    }
-    
-    @objc func keyboardWillHide(_ notification: Notification) -> Void {
-        view.frame.origin.y += getHalfKeyboardHeight(notification)
-    }
-    
-    func getHalfKeyboardHeight(_ notification: Notification) -> CGFloat {
-        let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
-        return keyboardSize.cgRectValue.height / 2
     }
 }
