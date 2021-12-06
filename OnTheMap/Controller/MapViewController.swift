@@ -39,26 +39,30 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // MARK: Delegate
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let reuseId = "pin"
+        let reuseId = "marker"
         
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        var markerView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKMarkerAnnotationView
 
-        if pinView == nil {
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            pinView!.canShowCallout = true
-            pinView!.pinTintColor = .systemRed
-            pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        if markerView == nil {
+            markerView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            markerView?.canShowCallout = true
+            markerView?.markerTintColor = .systemBlue
+            markerView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         } else {
-            pinView!.annotation = annotation
+            markerView?.annotation = annotation
         }
         
-        return pinView
+        return markerView
     }
 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
-            if let _ = view.annotation?.subtitle {
-                // TODO - Open URL
+            if let url = view.annotation?.subtitle! {
+                UIApplication.shared.open(URL(string: url)!, completionHandler: { success in
+                    if !success {
+                        self.showErrorAlert(title: "Failed to open URL", description: "Ensure that the URL is valid.")
+                    }
+                })
             }
         }
     }
