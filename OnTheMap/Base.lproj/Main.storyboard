@@ -420,13 +420,16 @@
         <!--Info Posting Map View Controller-->
         <scene sceneID="paE-IX-2aM">
             <objects>
-                <viewController id="jAw-3j-gmB" userLabel="Info Posting Map View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoPostingMapViewController" id="jAw-3j-gmB" userLabel="Info Posting Map View Controller" customClass="InfoPostingMapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="08v-NS-vsr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EnO-nQ-a66">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jAw-3j-gmB" id="h5T-NF-qgX"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IU-nK-IvX" userLabel="Finish Button">
                                 <rect key="frame" x="20" y="621.5" width="374" height="51.5"/>
@@ -453,6 +456,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="56J-jH-SYt"/>
+                    <connections>
+                        <outlet property="mapView" destination="EnO-nQ-a66" id="1Ty-9N-iGn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8g-ZQ-qZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

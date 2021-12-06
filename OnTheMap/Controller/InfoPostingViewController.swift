@@ -18,11 +18,13 @@ class InfoPostingViewController: UIViewController {
         super.viewWillAppear(animated)
         self.inputLogicController = InputLogicController(self)
         inputLogicController?.setupObservers()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         inputLogicController?.removeObservers()
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Outlet
@@ -39,10 +41,6 @@ class InfoPostingViewController: UIViewController {
     
     @IBAction func mediaURLTextFieldChanged(_ sender: Any) {
         inputLogicController?.checkMaySubmit(button: findLocationButton, textFields: [locationTextField, mediaURLTextField])
-    }
-    
-    @IBAction func cancelButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true)
     }
     
     @IBAction func findLocationButtonPressed(_ sender: Any) {
@@ -62,13 +60,12 @@ class InfoPostingViewController: UIViewController {
                     return
                 }
                 
-                print(mark)
-                
-//                if let mark = mark?.first {
-//                    let infoPostingMapView = InfoPostingMapViewController()
-//                    infoPostingMapView.mark = mark
-//                    self.navigationController?.pushViewController(infoPostingMapView, animated: true)
-//                }
+                if let mark = mark?.first {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let infoPostingMapViewController = storyboard.instantiateViewController(withIdentifier: "InfoPostingMapViewController") as! InfoPostingMapViewController
+                    infoPostingMapViewController.mark = mark
+                    self.navigationController?.pushViewController(infoPostingMapViewController, animated: true)
+                }
             })
         }
     }
