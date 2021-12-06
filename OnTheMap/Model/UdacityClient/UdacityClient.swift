@@ -16,7 +16,7 @@ class UdacityClient {
     
     enum Endpoint {
         static let session = URL(string: "https://onthemap-api.udacity.com/v1/session")!
-        static let studentLocation = URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation")!
+        static let studentLocation = URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation?limit=100&order=-updatedAt")!
     }
     
     // MARK: Requests
