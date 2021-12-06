@@ -37,6 +37,18 @@ class InputLogicController {
         self.context.rotate(view: button.imageView, start: loading)
     }
     
+    func toggleErrorIndicator(_ button: UIButton, title: String = "Error") -> Void {
+        let originalTitle = button.title(for: .normal)
+        
+        button.tintColor = .systemRed
+        button.setTitle(title, for: .normal)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            button.tintColor = .systemBlue
+            button.setTitle(originalTitle, for: .normal)
+        }
+    }
+    
     // MARK: Observer
     
     func setupObservers() {

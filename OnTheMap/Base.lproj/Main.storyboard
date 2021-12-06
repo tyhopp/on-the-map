@@ -352,7 +352,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTa-0K-JZC" userLabel="Location Text Field" customClass="CustomTextField" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" textContentType="username"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" textContentType="location"/>
                                                 <connections>
                                                     <action selector="locationTextFieldChanged:" destination="b1n-AU-fNu" eventType="editingChanged" id="g8e-NQ-Qvk"/>
                                                 </connections>
@@ -360,7 +360,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Media URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3RC-Xa-xSo" userLabel="Media URL Text Field" customClass="CustomTextField" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="54" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" textContentType="url"/>
                                                 <connections>
                                                     <action selector="mediaURLTextFieldChanged:" destination="b1n-AU-fNu" eventType="editingChanged" id="ULc-fu-iGt"/>
                                                 </connections>
@@ -372,6 +372,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Find Location" buttonSize="large">
                                                     <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="findLocationButtonPressed:" destination="b1n-AU-fNu" eventType="touchUpInside" id="ZOz-Uq-CE2"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
