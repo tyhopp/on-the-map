@@ -62,7 +62,13 @@ class InfoPostingViewController: UIViewController {
                     return
                 }
                 
-                // TODO - Parse mark and POST
+                print(mark)
+                
+//                if let mark = mark?.first {
+//                    let infoPostingMapView = InfoPostingMapViewController()
+//                    infoPostingMapView.mark = mark
+//                    self.navigationController?.pushViewController(infoPostingMapView, animated: true)
+//                }
             })
         }
     }
