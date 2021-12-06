@@ -7,6 +7,9 @@
 
 import UIKit
 
+/**
+ Handles shared nav bar logic.
+ */
 class NavBarLogicController {
     
     var context: UIViewController
@@ -41,6 +44,9 @@ class NavBarLogicController {
         }
     }
     
+    /**
+     Cannot be shared with `NavBarLogicController.toggleLoadingIndicator` because `UIButton` and `UIBarButtonItem` have different interfaces.
+     */
     func toggleLoadingIndicator(_ button: UIBarButtonItem, loading: Bool, title: String = "", image: UIImage = UIImage()) -> Void {
         button.isEnabled = !loading
         button.title = loading ? "" : title

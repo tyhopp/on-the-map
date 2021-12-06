@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfoPostingFieldViewController: UIViewController {
+class InfoPostingViewController: UIViewController {
     
     // MARK - Action
     

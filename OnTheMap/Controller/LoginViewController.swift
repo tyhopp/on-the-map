@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    var inputLogicController: InputLogicController?
+    
     // MARK: Outlets
     
     @IBOutlet weak var emailTextField: LoginTextField!
@@ -19,6 +21,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.inputLogicController = InputLogicController(self)
         setupObservers()
     }
     
@@ -42,20 +45,20 @@ class LoginViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func emailTextChanged(_ sender: Any) {
-        checkMayLogin()
+        inputLogicController?.checkMaySubmit(button: loginButton, textFields: [emailTextField, passwordTextField])
     }
     
     @IBAction func passwordTextChanged(_ sender: Any) {
-        checkMayLogin()
+        inputLogicController?.checkMaySubmit(button: loginButton, textFields: [emailTextField, passwordTextField])
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) -> Void {
         emailTextField.endEditing(true)
         passwordTextField.endEditing(true)
-        toggleLoadingIndicator(loading: true)
+        inputLogicController?.toggleLoadingIndicator(loginButton, loading: true, title: "Log In")
         
         UdacityClient.login(username: emailTextField.text!, password: passwordTextField.text!, completion: { success, error in
-            self.toggleLoadingIndicator(loading: false)
+            self.inputLogicController?.toggleLoadingIndicator(self.loginButton, loading: false, title: "Log In")
             
             if let error = error {
                 self.showErrorAlert(title: "Login Failed", description: error.localizedDescription)
@@ -84,19 +87,5 @@ class LoginViewController: UIViewController {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height / 2
-    }
-    
-    // MARK: Helper
-    
-    func checkMayLogin() -> Void {
-        // Would use proper validation in a real application, this is fine here
-        loginButton.isEnabled = emailTextField.hasText && passwordTextField.hasText
-    }
-    
-    func toggleLoadingIndicator(loading: Bool) {
-        loginButton.isEnabled = !loading
-        loginButton.setTitle(loading ? "" : "Log In", for: .normal)
-        loginButton.setImage(loading ? UIImage(named: "loading")?.withTintColor(.systemCyan) : UIImage(), for: .normal)
-        rotate(view: loginButton.imageView, start: loading)
     }
 }

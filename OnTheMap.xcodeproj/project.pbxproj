@@ -29,7 +29,8 @@
 		E58774AE273E0BDD007251EC /* UIViewController+StoryboardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58774AD273E0BDD007251EC /* UIViewController+StoryboardPreview.swift */; };
 		E58774B6273E4EED007251EC /* LoginSignupTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58774B5273E4EED007251EC /* LoginSignupTextView.swift */; };
 		E5D399E0275DB48B00EE8817 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D399DF275DB48B00EE8817 /* StudentInformation.swift */; };
-		E5D399E2275DC0C400EE8817 /* InfoPostingFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D399E1275DC0C400EE8817 /* InfoPostingFieldViewController.swift */; };
+		E5D399E2275DC0C400EE8817 /* InfoPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D399E1275DC0C400EE8817 /* InfoPostingViewController.swift */; };
+		E5D399E4275DC4B100EE8817 /* InputLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D399E3275DC4B100EE8817 /* InputLogicController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,8 @@
 		E58774AD273E0BDD007251EC /* UIViewController+StoryboardPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardPreview.swift"; sourceTree = "<group>"; };
 		E58774B5273E4EED007251EC /* LoginSignupTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupTextView.swift; sourceTree = "<group>"; };
 		E5D399DF275DB48B00EE8817 /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
-		E5D399E1275DC0C400EE8817 /* InfoPostingFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPostingFieldViewController.swift; sourceTree = "<group>"; };
+		E5D399E1275DC0C400EE8817 /* InfoPostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPostingViewController.swift; sourceTree = "<group>"; };
+		E5D399E3275DC4B100EE8817 /* InputLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLogicController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +112,9 @@
 				E5109E86273B675800CB57D5 /* LoginViewController.swift */,
 				E52C5A072759BAB200BEE60A /* MapViewController.swift */,
 				E539DECF275B59FD00C5B268 /* TableViewController.swift */,
+				E5D399E1275DC0C400EE8817 /* InfoPostingViewController.swift */,
 				E539DED3275B5C4000C5B268 /* NavBarLogicController.swift */,
-				E5D399E1275DC0C400EE8817 /* InfoPostingFieldViewController.swift */,
+				E5D399E3275DC4B100EE8817 /* InputLogicController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,7 +246,8 @@
 				E53C5664273BC0CE0077B63E /* UdacityClientLoginRequest.swift in Sources */,
 				E53C5668273BCC510077B63E /* UdacityClientErrorResponse.swift in Sources */,
 				E53C5666273BC0DC0077B63E /* UdacityClientLoginResponse.swift in Sources */,
-				E5D399E2275DC0C400EE8817 /* InfoPostingFieldViewController.swift in Sources */,
+				E5D399E2275DC0C400EE8817 /* InfoPostingViewController.swift in Sources */,
+				E5D399E4275DC4B100EE8817 /* InputLogicController.swift in Sources */,
 				E52C5A082759BAB200BEE60A /* MapViewController.swift in Sources */,
 				E58774AE273E0BDD007251EC /* UIViewController+StoryboardPreview.swift in Sources */,
 				E539DED8275B6BA700C5B268 /* TableCellView.swift in Sources */,

@@ -321,7 +321,7 @@
         <!--Info Posting Field View Controller-->
         <scene sceneID="sn2-6X-X9N">
             <objects>
-                <viewController id="b1n-AU-fNu" userLabel="Info Posting Field View Controller" customClass="InfoPostingFieldViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="b1n-AU-fNu" userLabel="Info Posting Field View Controller" customClass="InfoPostingViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GH6-kW-Ozh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
