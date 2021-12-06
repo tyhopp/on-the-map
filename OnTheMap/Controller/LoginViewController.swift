@@ -11,12 +11,6 @@ class LoginViewController: UIViewController {
     
     var inputLogicController: InputLogicController?
     
-    // MARK: Outlets
-    
-    @IBOutlet weak var emailTextField: LoginTextField!
-    @IBOutlet weak var passwordTextField: LoginTextField!
-    @IBOutlet weak var loginButton: UIButton!
-    
     // MARK: Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,17 +24,11 @@ class LoginViewController: UIViewController {
         removeObservers()
     }
     
-    // MARK: Observers
+    // MARK: Outlets
     
-    func setupObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    func removeObservers() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
+    @IBOutlet weak var emailTextField: LoginTextField!
+    @IBOutlet weak var passwordTextField: LoginTextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: Actions
     
@@ -71,6 +59,18 @@ class LoginViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    // MARK: Observers
+    
+    func setupObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func removeObservers() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // MARK: Keyboard

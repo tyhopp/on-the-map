@@ -349,20 +349,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="icM-MN-Cv3">
                                         <rect key="frame" x="0.0" y="150" width="400" height="150"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTa-0K-JZC" userLabel="Location Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTa-0K-JZC" userLabel="Location Text Field">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" textContentType="username"/>
                                                 <connections>
-                                                    <action selector="emailTextChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="GXk-p7-WOH"/>
+                                                    <action selector="locationTextFieldChanged:" destination="b1n-AU-fNu" eventType="editingChanged" id="g8e-NQ-Qvk"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Media URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3RC-Xa-xSo" userLabel="Media URL Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Media URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3RC-Xa-xSo" userLabel="Media URL Text Field">
                                                 <rect key="frame" x="0.0" y="54" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                                 <connections>
-                                                    <action selector="passwordTextChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="rBn-de-J6j"/>
+                                                    <action selector="mediaURLTextFieldChanged:" destination="b1n-AU-fNu" eventType="editingChanged" id="ULc-fu-iGt"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niP-ud-lhW" userLabel="Find Location In Button">
@@ -406,6 +406,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="findLocationButton" destination="niP-ud-lhW" id="w39-rL-VTp"/>
+                        <outlet property="locationTextField" destination="FTa-0K-JZC" id="raI-ii-GzZ"/>
+                        <outlet property="mediaURLTextField" destination="3RC-Xa-xSo" id="aON-1c-p5Q"/>
                         <segue destination="jAw-3j-gmB" kind="show" identifier="showLocationOnMapSegue" id="ots-9E-3OT"/>
                     </connections>
                 </viewController>
