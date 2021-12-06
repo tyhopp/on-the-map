@@ -26,8 +26,8 @@ class LoginViewController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var emailTextField: LoginTextField!
-    @IBOutlet weak var passwordTextField: LoginTextField!
+    @IBOutlet weak var emailTextField: CustomTextField!
+    @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var loginButton: UIButton!
     
     // MARK: Actions

@@ -16,12 +16,18 @@ class InfoPostingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.inputLogicController = InputLogicController(self)
+        inputLogicController?.setupObservers()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        inputLogicController?.removeObservers()
     }
     
     // MARK: - Outlet
     
-    @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var mediaURLTextField: UITextField!
+    @IBOutlet weak var locationTextField: CustomTextField!
+    @IBOutlet weak var mediaURLTextField: CustomTextField!
     @IBOutlet weak var findLocationButton: UIButton!
     
     // MARK: - Action

@@ -39,7 +39,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UHP-GC-BSh">
                                         <rect key="frame" x="0.0" y="150" width="400" height="150"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjt-DO-GCk" userLabel="Email Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjt-DO-GCk" userLabel="Email Text Field" customClass="CustomTextField" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" textContentType="username"/>
@@ -47,7 +47,7 @@
                                                     <action selector="emailTextChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="d5J-0M-JJ8"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0Z-hu-I8V" userLabel="Password Text Field" customClass="LoginTextField" customModule="OnTheMap" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0Z-hu-I8V" userLabel="Password Text Field" customClass="CustomTextField" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="54" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
@@ -327,7 +327,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pqn-pz-VGG">
-                                <rect key="frame" x="7" y="56" width="400" height="300"/>
+                                <rect key="frame" x="7" y="196" width="400" height="450"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqK-Jr-thT">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
@@ -349,7 +349,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="icM-MN-Cv3">
                                         <rect key="frame" x="0.0" y="150" width="400" height="150"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTa-0K-JZC" userLabel="Location Text Field">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTa-0K-JZC" userLabel="Location Text Field" customClass="CustomTextField" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" textContentType="username"/>
@@ -357,7 +357,7 @@
                                                     <action selector="locationTextFieldChanged:" destination="b1n-AU-fNu" eventType="editingChanged" id="g8e-NQ-Qvk"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Media URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3RC-Xa-xSo" userLabel="Media URL Text Field">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Media URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3RC-Xa-xSo" userLabel="Media URL Text Field" customClass="CustomTextField" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="54" width="400" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
@@ -372,9 +372,6 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Find Location" buttonSize="large">
                                                     <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SE4-Rr-OeS"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -383,19 +380,23 @@
                                             <constraint firstItem="3RC-Xa-xSo" firstAttribute="width" secondItem="icM-MN-Cv3" secondAttribute="width" id="xzr-EK-42Z"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-Jp-u5S">
+                                        <rect key="frame" x="0.0" y="300" width="400" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="2Jf-jm-4rQ"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="bFc-B2-LSn"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="gxR-in-pav"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="450" id="gxR-in-pav"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Pt-8U-EcD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pqn-pz-VGG" firstAttribute="centerX" secondItem="0Pt-8U-EcD" secondAttribute="centerX" id="LLB-rr-4Tk"/>
-                            <constraint firstItem="pqn-pz-VGG" firstAttribute="top" secondItem="0Pt-8U-EcD" secondAttribute="top" id="aCZ-Gv-Yqs"/>
+                            <constraint firstItem="pqn-pz-VGG" firstAttribute="centerY" secondItem="GH6-kW-Ozh" secondAttribute="centerY" id="6yJ-S4-nLU"/>
+                            <constraint firstItem="pqn-pz-VGG" firstAttribute="centerX" secondItem="GH6-kW-Ozh" secondAttribute="centerX" id="LLB-rr-4Tk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" leftItemsSupplementBackButton="YES" id="CwU-ba-kZp">

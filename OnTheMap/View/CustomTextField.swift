@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginTextField: UITextField, UITextFieldDelegate {
+class CustomTextField: UITextField, UITextFieldDelegate {
     
     // MARK: Lifecycle
     
@@ -22,6 +22,7 @@ class LoginTextField: UITextField, UITextFieldDelegate {
     
     // MARK: Delegate
     
+    // Hide keyboard on return button tap
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.resignFirstResponder()
         return true
