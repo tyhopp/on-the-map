@@ -401,10 +401,13 @@
                     <navigationItem key="navigationItem" title="Add Location" leftItemsSupplementBackButton="YES" id="CwU-ba-kZp">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sS2-pN-lKX"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="jAw-3j-gmB" kind="show" identifier="showLocationOnMapSegue" id="ots-9E-3OT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydE-x9-w7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3424.6376811594205" y="55.580357142857139"/>
+            <point key="canvasLocation" x="3481" y="56"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZjF-MP-Gjc">
@@ -429,15 +432,16 @@
             <objects>
                 <viewController id="jAw-3j-gmB" userLabel="Info Posting Map View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="08v-NS-vsr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="dMa-6n-85J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="56J-jH-SYt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8g-ZQ-qZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4114" y="56"/>
+            <point key="canvasLocation" x="4223" y="56"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
