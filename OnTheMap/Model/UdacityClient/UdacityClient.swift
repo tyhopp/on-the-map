@@ -10,13 +10,15 @@ import Foundation
 class UdacityClient {
     
     struct Auth {
+        static var accountKey = ""
         static var sessionId = ""
         static var sessionExpiration = ""
     }
     
     enum Endpoint {
         static let session = URL(string: "https://onthemap-api.udacity.com/v1/session")!
-        static let studentLocation = URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation?limit=100&order=-updatedAt")!
+        static let user = URL(string: "https://onthemap-api.udacity.com/v1/users")!
+        static let studentLocation = URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation")!
     }
     
     // MARK: Requests
@@ -25,8 +27,9 @@ class UdacityClient {
         let payload = UdacityClientLoginRequest(udacity: .init(username: username, password: password))
         let body = try! JSONEncoder().encode(payload)
         
-        requestTask(url: Endpoint.session, method: "POST", headers: nil, body: body, responseType: UdacityClientLoginResponse.self) { response, error in
+        requestTask(url: Endpoint.session, method: "POST", body: body, responseType: UdacityClientLoginResponse.self) { response, error in
             if let response = response {
+                Auth.accountKey = response.account.key
                 Auth.sessionId = response.session.id
                 Auth.sessionExpiration = response.session.expiration
                 completion(true, nil)
@@ -61,7 +64,41 @@ class UdacityClient {
     }
     
     class func getStudentLocations(completion: @escaping (UdacityClientStudentLocationResponse?, Error?) -> Void) {
-        requestTask(url: Endpoint.studentLocation, headers: nil, responseType: UdacityClientStudentLocationResponse.self) { response, error in
+        var components = URLComponents()
+        
+        let limitQuery = URLQueryItem(name: "limit", value: "100")
+        let orderQuery = URLQueryItem(name: "order", value: "-updatedAt")
+        
+        components.scheme = Endpoint.studentLocation.scheme
+        components.host = Endpoint.studentLocation.host
+        components.path = Endpoint.studentLocation.path
+        components.queryItems = [limitQuery, orderQuery]
+        
+        requestTask(url: components.url!, responseType: UdacityClientStudentLocationResponse.self) { response, error in
+            if let response = response {
+                completion(response, error)
+            } else {
+                completion(response, error)
+            }
+        }
+    }
+    
+    class func getUser(completion: @escaping (UdacityClientUserResponse?, Error?) -> Void) {
+        let url = Endpoint.user.appendingPathComponent(Auth.accountKey)
+        
+        requestTask(url: url, responseType: UdacityClientUserResponse.self) { response, error in
+            if let response = response {
+                completion(response, error)
+            } else {
+                completion(response, error)
+            }
+        }
+    }
+    
+    class func postStudentLocation(_ payload: StudentInformation, completion: @escaping (UdacityClientCreateStudentLocationResponse?, Error?) -> Void) {
+        let body = try! JSONEncoder().encode(payload)
+        
+        requestTask(url: Endpoint.studentLocation, method: "POST", body: body, responseType: UdacityClientCreateStudentLocationResponse.self) { response, error in
             if let response = response {
                 completion(response, error)
             } else {
@@ -72,7 +109,7 @@ class UdacityClient {
     
     // MARK: Generic tasks
     
-    private class func requestTask<ResponseType: Decodable>(url: URL, method: String = "GET", headers: [String: String]?, body: Data? = nil, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
+    private class func requestTask<ResponseType: Decodable>(url: URL, method: String = "GET", headers: [String: String]? = [:], body: Data? = nil, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
         
         var request = URLRequest(url: url)
         
@@ -99,12 +136,13 @@ class UdacityClient {
                 return
             }
             
-            // Remove first 5 characters for session endpoint (strange Udacity security measure)
-            if url == Endpoint.session {
+            // Remove first 5 characters for certain endpoints (strange Udacity security measure)
+            if url == Endpoint.session || url == Endpoint.user.appendingPathComponent(Auth.accountKey) {
                 data = data.subdata(in: 5..<data.count)
             }
             
             let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do {
                 let responseObject = try decoder.decode(ResponseType.self, from: data)

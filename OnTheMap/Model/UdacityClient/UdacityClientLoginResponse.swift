@@ -16,8 +16,7 @@ struct UdacityClientLoginResponse: Codable {
         let key: String
         
         enum CodingKeys: String, CodingKey {
-            case registered
-            case key
+            case registered, key
         }
     }
     
@@ -26,8 +25,7 @@ struct UdacityClientLoginResponse: Codable {
         let expiration: String
         
         enum CodingKeys: String, CodingKey {
-            case id
-            case expiration
+            case id, expiration
         }
     }
 }

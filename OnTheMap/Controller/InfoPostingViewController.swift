@@ -56,7 +56,7 @@ class InfoPostingViewController: UIViewController {
                 self.inputLogicController?.toggleLoadingIndicator(self.findLocationButton, loading: false, title: "Find Location")
                 
                 if error != nil {
-                    self.inputLogicController?.toggleErrorIndicator(self.findLocationButton, title: "Failed to geocode")
+                    self.showErrorAlert(title: "Failed to geocode", description: "Check address for errors or a try a new one (e.g. \"Seattle, WA\").")
                     return
                 }
                 
@@ -64,6 +64,9 @@ class InfoPostingViewController: UIViewController {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let infoPostingMapViewController = storyboard.instantiateViewController(withIdentifier: "InfoPostingMapViewController") as! InfoPostingMapViewController
                     infoPostingMapViewController.mark = mark
+                    if let mediaURL = self.mediaURLTextField.text {
+                        infoPostingMapViewController.mediaURL = mediaURL
+                    }
                     self.navigationController?.pushViewController(infoPostingMapViewController, animated: true)
                 }
             })

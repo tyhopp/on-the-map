@@ -15,8 +15,7 @@ struct UdacityClientLoginRequest: Codable {
         let password: String
         
         enum CodingKeys: String, CodingKey {
-            case username
-            case password
+            case username, password
         }
     }
 }

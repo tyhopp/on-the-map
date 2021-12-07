@@ -20,15 +20,6 @@ struct StudentInformation: Codable {
     let updatedAt: String
 
     enum CodingKeys: String, CodingKey {
-        case createdAt
-        case firstName
-        case lastName
-        case latitude
-        case longitude
-        case mapString
-        case mediaURL
-        case objectId
-        case uniqueKey
-        case updatedAt
+        case createdAt, firstName, lastName, latitude, longitude, mapString, mediaURL, objectId, uniqueKey, updatedAt
     }
 }

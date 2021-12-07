@@ -28,7 +28,7 @@ class InputLogicController {
     // MARK: Loading
     
     /**
-     Cannot be shared with `NavBarLogicController.toggleLoadingIndicator` because `UIButton` and `UIBarButtonItem` have different interfaces.
+     Cannot be shared with `NavBarLogicController.toggleLoadingIndicator` because `UIButton` and `UIBarButtonItem` have different interfaces. They're different enough there's not a big gain if we generalize.
      */
     func toggleLoadingIndicator(_ button: UIButton, loading: Bool, title: String = "", image: UIImage = UIImage()) -> Void {
         button.isEnabled = !loading
@@ -37,6 +37,9 @@ class InputLogicController {
         self.context.rotate(view: button.imageView, start: loading)
     }
     
+    /**
+     Not used any longer but will keep because it's a nice solution for use in modally preseented view controllers.
+     */
     func toggleErrorIndicator(_ button: UIButton, title: String = "Error") -> Void {
         let originalTitle = button.title(for: .normal)
         
